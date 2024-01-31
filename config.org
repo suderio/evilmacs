@@ -31,6 +31,7 @@
 - [[#highlight-todo][HIGHLIGHT TODO]]
 - [[#ivy-counsel][IVY (COUNSEL)]]
 - [[#language-support][LANGUAGE SUPPORT]]
+- [[#latex][Latex]]
 - [[#minibuffer-escape][MINIBUFFER ESCAPE]]
 - [[#modeline][MODELINE]]
 - [[#neotree][NEOTREE]]
@@ -674,6 +675,11 @@ Emacs has built-in programming language modes for Lisp, Scheme, DSSSL, Ada, ASM,
 
 #+end_src
 
+* Latex
+#+begin_src emacs-lisp
+(use-package preview-latex)
+#+end_src
+
 * MINIBUFFER ESCAPE
 By default, Emacs requires you to hit ESC three times to escape quit the minibuffer.  
 
@@ -883,6 +889,7 @@ The following settings are simple modes that are enabled (or disabled) so that E
 (setq use-file-dialog nil)   ;; No file dialog
 (setq use-dialog-box nil)    ;; No dialog box
 (setq pop-up-windows nil)    ;; No popup windows
+(setq vc-follow-symlinks t)  ;; When editing a symlink pointing to version control, edit the file without asking
 #+end_src
 
 * SHELLS AND TERMINALS
