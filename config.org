@@ -64,6 +64,13 @@ We must install a bunch of os packages in order to everything work:
 1. cmake
 2. mpv
 3. unzip
+
+#+begin_src emacs-lisp
+(setq em/cmake (executable-find "cmake"))
+(setq em/mpv (executable-find "mpv"))
+(setq em/unzip (executable-find "unzip"))
+#+end_src
+
 ** Adding the scripts directory to path
 #+begin_src emacs-lisp
 (add-to-list 'load-path "~/.config/emacs/scripts/")
