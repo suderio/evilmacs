@@ -437,8 +437,8 @@ You can use the bindings CTRL plus =/- for zooming in/out.  You can also use CTR
   (em/leader-keys
     "f" '(:ignore t :wk "Files")    
     "f c" '((lambda () (interactive)
-              (find-file "~/.config/emacs/config.org")) 
-            :wk "Open emacs config.org")
+              (find-file "~/.config/emacs/readme.org")) 
+            :wk "Open emacs readme.org")
     "f e" '((lambda () (interactive)
               (dired "~/.config/emacs/")) 
             :wk "Open user-emacs-directory in dired")
