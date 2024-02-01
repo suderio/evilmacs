@@ -7,6 +7,7 @@
 
 * TABLE OF CONTENTS :toc:
 - [[#important-programs-to-load-first][IMPORTANT PROGRAMS TO LOAD FIRST]]
+  - [[#what-should-be-installed-in-your-os][What should be installed in your OS]]
   - [[#adding-the-scripts-directory-to-path][Adding the scripts directory to path]]
   - [[#sourcing-the-scripts][Sourcing the scripts]]
 - [[#all-the-icons][ALL THE ICONS]]
@@ -31,7 +32,7 @@
 - [[#highlight-todo][HIGHLIGHT TODO]]
 - [[#ivy-counsel][IVY (COUNSEL)]]
 - [[#language-support][LANGUAGE SUPPORT]]
-- [[#latex][Latex]]
+- [[#latex][LATEX]]
 - [[#minibuffer-escape][MINIBUFFER ESCAPE]]
 - [[#modeline][MODELINE]]
 - [[#neotree][NEOTREE]]
@@ -59,16 +60,21 @@
 
 * IMPORTANT PROGRAMS TO LOAD FIRST
 To keep this =config.org= a reasonable length, I have moved a lot of code to individual scripts that will be sourced by this config.  These scripts are found in "~/.config/emacs/scripts" and do not contain any code that most people are likely to need to edit.
-
+** What should be installed in your OS
 We must install a bunch of os packages in order to everything work:
 1. cmake
 2. mpv
 3. unzip
+4. pdflatex/texlive
 
 #+begin_src emacs-lisp
-(setq em/cmake (executable-find "cmake"))
-(setq em/mpv (executable-find "mpv"))
-(setq em/unzip (executable-find "unzip"))
+(defun em/check-os-deps (dep)
+"Checks and reports missing dependencies"
+(unless (executable-find dep) (message "%s is not installed, some packages may not work" dep))
+)
+(em/check-os-deps "cmake")
+(em/check-os-deps "mpv")
+(em/check-os-deps "unzip")
 #+end_src
 
 ** Adding the scripts directory to path
@@ -682,9 +688,12 @@ Emacs has built-in programming language modes for Lisp, Scheme, DSSSL, Ada, ASM,
 
 #+end_src
 
-* Latex
+* LATEX
 #+begin_src emacs-lisp
 (use-package preview-latex)
+(use-package latex-preview-pane
+:config
+(latex-preview-pane-enable))
 #+end_src
 
 * MINIBUFFER ESCAPE
