@@ -1,0 +1,8 @@
+.local/
+readme.el
+auto-save-list/
+projectile-bookmarks.eld
+recentf
+sessions
+transient/
+eln-cache/
