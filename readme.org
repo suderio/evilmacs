@@ -11,6 +11,7 @@
   - [[#non-versioned-local-files][Non-versioned, local files]]
   - [[#package-manager][Package Manager]]
 - [[#utilities][UTILITIES]]
+  - [[#no-littering][No littering]]
   - [[#moving-windows][Moving windows]]
   - [[#app-launcher-this-is-still-not-working-very-well][App Launcher (this is still not working very well)]]
 - [[#all-the-icons][ALL THE ICONS]]
@@ -79,9 +80,10 @@ We must install a bunch of os packages in order to everything work:
 (em/check-os-deps "pdflatex")
 #+end_src
 ** Non-versioned, local files
+Everything temporary should go in the .local directory.
 
 #+begin_src emacs-lisp
-(defvar em/local-dir (concat user-emacs-directory ".local/") "Local state directory")
+(defvar em/local-dir (expand-file-name ".local/" user-emacs-directory) "Local state directory")
 #+end_src
 ** Package Manager
 Elpaca seems to be a lot easier and dependable.
@@ -163,6 +165,16 @@ Elpaca seems to be a lot easier and dependable.
 #+end_src
 
 * UTILITIES
+** No littering
+
+#+begin_src emacs-lisp
+(use-package no-littering
+   :ensure t
+   :config
+   (setq no-littering-etc-directory (expand-file-name "config/" user-emacs-directory)
+         no-littering-var-directory (expand-file-name "data/" user-emacs-directory))
+)
+#+end_src
 ** Moving windows
 
 #+begin_src emacs-lisp
