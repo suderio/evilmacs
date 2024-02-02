@@ -1139,6 +1139,23 @@ Display the actual color as a background for any hex color value (ex. #ffffff). 
 
 #+begin_src emacs-lisp
 (use-package restclient)
+
+;; Ver como traduzir isso para o elpaca
+;(use-package company-restclient
+;  :when (modulep :completion company)
+;  :after restclient
+;  :config (set-company-backend! 'restclient-mode 'company-restclient))
+;
+;
+;(use-package restclient-jq
+;  :when (modulep +jq)
+;  :after restclient)
+;
+;
+;(use-package jq-mode
+;  :when (modulep +jq)
+;  :after restclient-jq)
+
 (em/check-os-deps "jq")
 #+end_src
 * SANE DEFAULTS
