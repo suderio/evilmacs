@@ -10,7 +10,9 @@
   - [[#what-should-be-installed-in-your-os][What should be installed in your OS]]
   - [[#non-versioned-local-files][Non-versioned, local files]]
   - [[#package-manager][Package Manager]]
-  - [[#utilities][UTILITIES]]
+  - [[#no-littering][No littering]]
+  - [[#moving-windows][Moving windows]]
+  - [[#app-launcher-this-is-still-not-working-very-well][App Launcher (this is still not working very well)]]
 - [[#all-the-icons][ALL THE ICONS]]
 - [[#backup][BACKUP]]
 - [[#company][COMPANY]]
@@ -164,8 +166,7 @@ Elpaca seems to be a lot easier and dependable.
 ;;; elpaca-setup.el ends here
 #+end_src
 
-** UTILITIES
-*** No littering
+** No littering
 
 #+begin_src emacs-lisp
 (use-package no-littering
@@ -174,7 +175,7 @@ Elpaca seems to be a lot easier and dependable.
 (setq custom-file (expand-file-name "custom.el" no-littering-etc-directory))
 
 #+end_src
-*** Moving windows
+** Moving windows
 
 #+begin_src emacs-lisp
 
@@ -279,7 +280,7 @@ one, an error is signaled."
 ;;; buffer-move.el ends here
 #+end_src
 
-*** App Launcher (this is still not working very well)
+** App Launcher (this is still not working very well)
 #+begin_src emacs-lisp
 
 ;;; app-launchers.el --- Possible alternatives to dmenu/rofi
@@ -1138,7 +1139,7 @@ Display the actual color as a background for any hex color value (ex. #ffffff). 
 
 #+begin_src emacs-lisp
 (use-package restclient)
-
+(em/check-os-deps "jq")
 #+end_src
 * SANE DEFAULTS
 The following settings are simple modes that are enabled (or disabled) so that Emacs functions more like you would expect a proper editor/IDE to function.
