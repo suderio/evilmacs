@@ -168,12 +168,13 @@ Elpaca seems to be a lot easier and dependable.
 ** No littering
 
 #+begin_src emacs-lisp
+(setq no-littering-etc-directory (expand-file-name "config/" user-emacs-directory)
+      no-littering-var-directory (expand-file-name "data/" user-emacs-directory))
 (use-package no-littering
-   :ensure t
-   :config
-   (setq no-littering-etc-directory (expand-file-name "config/" user-emacs-directory)
-         no-littering-var-directory (expand-file-name "data/" user-emacs-directory))
-)
+   :ensure t)
+;; Emacs will save customizations into your init.el file by default. Instead, save in the "etc" directory:
+(setq custom-file (no-littering-expand-etc-file-name "custom.el"))
+
 #+end_src
 ** Moving windows
 
