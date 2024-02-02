@@ -83,7 +83,9 @@ We must install a bunch of os packages in order to everything work:
 Everything temporary should go in the .local directory.
 
 #+begin_src emacs-lisp
-(defvar em/local-dir (expand-file-name ".local/" user-emacs-directory) "Local state directory")
+;; (defvar em/local-dir (expand-file-name ".local/" user-emacs-directory) "Local state directory")
+(setq no-littering-etc-directory (expand-file-name "config/" user-emacs-directory)
+      no-littering-var-directory (expand-file-name "data/" user-emacs-directory))
 #+end_src
 ** Package Manager
 Elpaca seems to be a lot easier and dependable.
@@ -91,7 +93,7 @@ Elpaca seems to be a lot easier and dependable.
 #+begin_src emacs-lisp
 
 (defvar elpaca-installer-version 0.6)
-(defvar elpaca-directory (expand-file-name "elpaca/" em/local-dir))
+(defvar elpaca-directory (expand-file-name "elpaca/" no-littering-var-directory))
 (defvar elpaca-builds-directory (expand-file-name "builds/" elpaca-directory))
 (defvar elpaca-repos-directory (expand-file-name "repos/" elpaca-directory))
 (defvar elpaca-order '(elpaca :repo "https://github.com/progfolio/elpaca.git"
@@ -168,8 +170,6 @@ Elpaca seems to be a lot easier and dependable.
 ** No littering
 
 #+begin_src emacs-lisp
-(setq no-littering-etc-directory (expand-file-name "config/" user-emacs-directory)
-      no-littering-var-directory (expand-file-name "data/" user-emacs-directory))
 (use-package no-littering
    :ensure t)
 ;; Emacs will save customizations into your init.el file by default. Instead, save in the "etc" directory:
