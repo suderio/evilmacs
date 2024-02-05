@@ -62,6 +62,13 @@
 - [[#transparency][TRANSPARENCY]]
 - [[#which-key][WHICH-KEY]]
 
+
+After the (amazing) Doom emacs breaks for the 59th time, I realized I would need to start my own configuration from the ground up. This is it.
+
+Strongly influenced by:
+- https://github.com/iocanel/emacs.d
+- https://gitlab.com/dwt1/configuring-emacs
+
 * IMPORTANT THINGS TO DO FIRST
 These are the bare minimum.
 
