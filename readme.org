@@ -62,13 +62,6 @@
 - [[#transparency][TRANSPARENCY]]
 - [[#which-key][WHICH-KEY]]
 
-
-After the (amazing) Doom emacs breaks for the 59th time, I realized I would need to start my own configuration from the ground up. This is it.
-
-Strongly influenced by:
-- https://github.com/iocanel/emacs.d
-- https://gitlab.com/dwt1/configuring-emacs
-
 * IMPORTANT THINGS TO DO FIRST
 These are the bare minimum.
 
@@ -590,7 +583,7 @@ Defining the various fonts that Emacs will use.
 ** Setting the Font Face
 #+begin_src emacs-lisp
 (set-face-attribute 'default nil
-  :font "FiraCode"
+  :font "Noto Sans"
   :height 110
   :weight 'medium)
 (set-face-attribute 'variable-pitch nil
@@ -598,7 +591,7 @@ Defining the various fonts that Emacs will use.
   :height 120
   :weight 'medium)
 (set-face-attribute 'fixed-pitch nil
-  :font "FiraCode"
+  :font "Noto Sans"
   :height 110
   :weight 'medium)
 ;; Makes commented text and keywords italics.
@@ -612,7 +605,7 @@ Defining the various fonts that Emacs will use.
 ;; This sets the default font on all graphical frames created after restarting Emacs.
 ;; Does the same thing as 'set-face-attribute default' above, but emacsclient fonts
 ;; are not right unless I also add this method of setting the default font.
-(add-to-list 'default-frame-alist '(font . "FiraCode-11"))
+(add-to-list 'default-frame-alist '(font . "Noto Sans-11"))
 
 ;; Uncomment the following line if line spacing needs adjusting.
 (setq-default line-spacing 0.12)
@@ -942,6 +935,8 @@ Emacs has built-in programming language modes for Lisp, Scheme, DSSSL, Ada, ASM,
 (use-package haskell-mode)
 (use-package lua-mode)
 (use-package php-mode)
+(use-package yaml-mode)
+(use-package bash-mode)
 
 #+end_src
 
