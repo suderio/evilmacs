@@ -15,6 +15,7 @@
   - [[#app-launcher-this-is-still-not-working-very-well][App Launcher (this is still not working very well)]]
 - [[#all-the-icons][ALL THE ICONS]]
 - [[#backup][BACKUP]]
+- [[#bell][BELL]]
 - [[#company][COMPANY]]
 - [[#dashboard][DASHBOARD]]
 - [[#diminish][DIMINISH]]
@@ -363,6 +364,15 @@ By default, Emacs creates automatic backups of files in their original directori
 
 #+end_src
 
+* BELL
+
+Disables anoying bell
+
+#+begin_src emacs-lisp
+(setq visible-bell nil)
+(setq ring-bell-function 'ignore)
+
+#+end_src
 * COMPANY
 [[https://company-mode.github.io/][Company]] is a text completion framework for Emacs. The name stands for "complete anything".  Completion will start automatically after you type a few letters. Use M-n and M-p to select, <return> to complete or <tab> to complete the common part.
 
