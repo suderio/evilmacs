@@ -3,3 +3,4 @@ data/
 readme.el
 sessions
 auto-save-list/
+eln-cache/
